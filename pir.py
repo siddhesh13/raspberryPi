@@ -1,7 +1,7 @@
-import RPi.GPIO as GPIO
-import time
+import RPi.GPIO as GPIO   # Import the RPi Library for GPIO pin control
+import time           # Library will let us put in delays
 GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BOARD)     # We want to use the physical pin number scheme
 GPIO.setup(11, GPIO.IN)         #Read output from PIR motion sensor
 GPIO.setup(3, GPIO.OUT)         #LED output pin
 while True:
