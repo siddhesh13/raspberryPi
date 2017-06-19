@@ -19,66 +19,65 @@ bright=1                   # Set initial brightness to 1%
 while(1):                  # Loop Forever
  #Red led  
     for bright in range (0,100,4):
-        # bright=bright/2.               # Set brightness to half
+     
         pwm1.ChangeDutyCycle(bright)   # Apply new brightness
-        # pwm2.ChangeDutyCycle(bright)   # Apply new brightness
+       
         sleep(.10)                     # Briefly Pause
         print "New Green Brightness is: ",bright # Notify User of Brightness
 
 
 
     for bright in range (100,0,-4):
-        # bright=bright*2                # Double Brightness
+       
         if bright==100:                 # Keep Brightness at or below 100%
            print "You are at Full Bright"
         
         pwm1.ChangeDutyCycle(bright)  # Apply new brightness
-        # pwm2.ChangeDutyCycle(bright)  # Apply new brightness
+      
         sleep(.10)                    # Pause
         print "New Green Brightness is: ",bright #Notify User of Brightness
-        # bright = bright - 1
+      
 
 
 
 #green Led
     for bright in range (0,100,4):
-        # bright=bright/2.               # Set brightness to half
-        # pwm1.ChangeDutyCycle(bright)   # Apply new brightness
+       
         pwm2.ChangeDutyCycle(bright)   # Apply new brightness
         sleep(.10)                     # Briefly Pause
         print "New Blue Brightness is: ",bright # Notify User of Brightness
 
 
     for bright in range (100,0,-4):
-        # bright=bright*2                # Double Brightness
+      
         if bright==100:                 # Keep Brightness at or below 100%
            print "You are at Full Bright"
         
-        # pwm1.ChangeDutyCycle(bright)  # Apply new brightness
+     
         pwm2.ChangeDutyCycle(bright)  # Apply new brightness
         sleep(.10)                    # Pause
         print "New Blue Brightness is: ",bright #Notify User of Brightness
-        # bright = bright - 1 
+     
 
 
 
   #blue Led
     for bright in range (0,100,4):
-        # bright=bright/2.               # Set brightness to half
+        
         pwm3.ChangeDutyCycle(bright)   # Apply new brightness
-        # pwm2.ChangeDutyCycle(bright)   # Apply new brightness
+     
         sleep(.10)                     # Briefly Pause
         print "New Red Brightness is: ",bright # Notify User of Brightness
 
 
 
     for bright in range (100,0,-4):
-        # bright=bright*2                # Double Brightness
+    
         if bright==100:                 # Keep Brightness at or below 100%
            print "You are at Full Bright"
         
         pwm3.ChangeDutyCycle(bright)  # Apply new brightness
-        # pwm2.ChangeDutyCycle(bright)  # Apply new brightness
+       
         sleep(.10)                    # Pause
         print "New Red Brightness is: ",bright #Notify User of Brightness
-        # bright = bright - 1
+ 
