@@ -1,6 +1,35 @@
-#!/usr/bin/python
+"""
+Interfacing Raspberry Pi and MPU-6050
 
- 
+
+Once you have the board connected you can test to see if the Pi has detected it.  This is done with the following command to install the i2c tools
+sudo apt-get install i2c-tools
+and then either
+sudo i2cdetect -y 0 (for a Revision 1 board like mine)
+or
+sudo i2cdetect -y 1 (for a Revision 2 board)
+then you should see output showing any I2C devices that are attached and their addresses
+
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- 68 -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
+
+This shows that the Pi has detected the sensor with an address of 0x68 (hexadecimal), this address is needed to interact with it.  Enter the following command and you should get an output of 0x68 on screen if everything is working properly.
+sudo i2cget -y 0 0x68 0x75
+This command talks to the device whose address is 0x68 (the sensor) and retrieves the value in the register 0x75 which has a default value of 0x68 the same value as the address.
+
+To be able to read from the I2C using Python bus we need to install the smbus module
+sudo apt-get install python-smbus 
+
+Now to some code, this is just simple test code to make sure the sensor is working 
+
+"""
 
 import smbus
 
