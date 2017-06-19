@@ -1,7 +1,7 @@
-import RPi.GPIO as GPIO
-import time
+import RPi.GPIO as GPIO  # Import the RPi Library for GPIO pin control
+import time              # Library will let us put in delays
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BOARD)  # We want to use the physical pin number scheme
 GPIO.setwarnings(False)
 GPIO.setup(11, GPIO.OUT)
 
