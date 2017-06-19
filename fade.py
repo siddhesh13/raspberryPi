@@ -17,8 +17,7 @@ pwm3.start(0)
 bright=1                   # Set initial brightness to 1%
 
 while(1):                  # Loop Forever
-    # if GPIO.input(button1)==0:             #If left button is pressed
-    # print "Button 1 was Pressed"   # Notify User
+ #Red led  
     for bright in range (0,100,4):
         # bright=bright/2.               # Set brightness to half
         pwm1.ChangeDutyCycle(bright)   # Apply new brightness
@@ -26,8 +25,7 @@ while(1):                  # Loop Forever
         sleep(.10)                     # Briefly Pause
         print "New Green Brightness is: ",bright # Notify User of Brightness
 
-# if GPIO.input(button2)==0:             # If button 2 is pressed
-# print "Button 2 was Pressed"   # Notify User
+
 
     for bright in range (100,0,-4):
         # bright=bright*2                # Double Brightness
@@ -42,8 +40,7 @@ while(1):                  # Loop Forever
 
 
 
-    # if GPIO.input(button1)==0:             #If left button is pressed
-    # print "Button 1 was Pressed"   # Notify User
+#green Led
     for bright in range (0,100,4):
         # bright=bright/2.               # Set brightness to half
         # pwm1.ChangeDutyCycle(bright)   # Apply new brightness
@@ -51,8 +48,6 @@ while(1):                  # Loop Forever
         sleep(.10)                     # Briefly Pause
         print "New Blue Brightness is: ",bright # Notify User of Brightness
 
-# if GPIO.input(button2)==0:             # If button 2 is pressed
-# print "Button 2 was Pressed"   # Notify User
 
     for bright in range (100,0,-4):
         # bright=bright*2                # Double Brightness
@@ -67,8 +62,7 @@ while(1):                  # Loop Forever
 
 
 
-    # if GPIO.input(button1)==0:             #If left button is pressed
-    # print "Button 1 was Pressed"   # Notify User
+  #blue Led
     for bright in range (0,100,4):
         # bright=bright/2.               # Set brightness to half
         pwm3.ChangeDutyCycle(bright)   # Apply new brightness
@@ -76,8 +70,7 @@ while(1):                  # Loop Forever
         sleep(.10)                     # Briefly Pause
         print "New Red Brightness is: ",bright # Notify User of Brightness
 
-# if GPIO.input(button2)==0:             # If button 2 is pressed
-# print "Button 2 was Pressed"   # Notify User
+
 
     for bright in range (100,0,-4):
         # bright=bright*2                # Double Brightness
