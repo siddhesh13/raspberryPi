@@ -1,1 +1,1 @@
-# rRaspberry Pi based projects
+# Raspberry Pi based projects
